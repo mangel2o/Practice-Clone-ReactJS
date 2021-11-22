@@ -1,0 +1,106 @@
+.container{
+   display: flex;
+   flex-flow: column;
+   width: 100%;
+   margin-top: 50px;
+}
+
+.cardContainer{
+   background-color: #efefef;
+   display: flex;
+   flex-flow: column;
+   width: 100%;
+}
+
+
+.card{
+   position: relative;
+ }
+
+.cardContent{
+   position: absolute;
+   display: flex;
+   gap: 190px;
+   flex-flow: column;
+   bottom: 0;
+   left: 0;
+   top: 0;
+   right: 0;
+   width: 100%;
+   height: 100%;
+   background-color:  rgba(0, 0, 0, 0.40);
+   color: white;
+   padding: 10px;
+   transition: 0.5s;
+}
+
+.cardTitle{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.backButton{
+   display: flex ;
+   gap: 6px;
+   color: #ffffff; 
+}
+
+.backButton:hover{
+   text-decoration: underline;     
+}
+
+
+.bottomCardContainer{
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto;
+   width: 70rem;
+}
+
+.description{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px 100px;
+}
+
+.commentSection{
+   display: flex;
+   flex-flow: column;
+   gap: 20px;
+   justify-content: center;
+   padding: 0 100px 20px 100px;
+   width: 100%;
+}
+
+.commentContainer{
+   display: flex;
+   flex-flow: column;
+   gap: 10px;
+   justify-content: center;
+   width: 100%;
+   padding: 20px;
+   background-color: white;
+   border-radius: 10px;
+}
+
+.commentAuthor{
+   display: flex;
+   gap: 6px; 
+   align-items: center;
+}
+
+.commentContent{
+   margin-left: 42px;
+}
+
+.commentPost{
+   display: flex;
+   flex-flow: column;
+   gap: 20px;
+   padding: 20px 100px;
+   width: 100%;
+}
