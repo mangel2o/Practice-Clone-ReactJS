@@ -1,38 +1,118 @@
 {
-   "posts": [
-      {
-         "id": 1,
-         "title": "The waves are high & beautiful",
-         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
-         "image": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg",
-         "category": "Travel",
-         "comments": [
-            {
-               "author": "Juan",
-               "content": "Wow!"
-            }
-         ]
-      },
-      {
-         "id": 2,
-         "title": "At the beach in winter",
-         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
-         "image": "https://atlantis.nyc3.digitaloceanspaces.com/media/legacy/atlantis/Things_To_Do/Water_Park/Beaches/Hero/Experiences_Beach.jpg",
-         "category": "Business",
-         "comments": [
-            {
-               "author": "Pedro",
-               "content": "Nice view!"
-            }
-         ]
-      },
-      {
-         "id": 3,
-         "title": "Berlin",
-         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
-         "image": "https://viajes.nationalgeographic.com.es/medio/2021/05/12/berlin_07b5c2e5_1272x824.jpg",
-         "category": "Business",
-         "comments": []
-      }
-   ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "The waves are high & beautiful",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
+      "image": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg",
+      "category": "Lifestyle",
+      "comments": [
+        {
+          "author": "Juan",
+          "content": "Wow!"
+        },
+        {
+          "author": "Unknown",
+          "content": "Nice!"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic!"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic view!"
+        },
+        {
+          "author": "Unknown",
+          "content": "Amazing as always 👍"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "At the beach in winter",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
+      "image": "https://atlantis.nyc3.digitaloceanspaces.com/media/legacy/atlantis/Things_To_Do/Water_Park/Beaches/Hero/Experiences_Beach.jpg",
+      "category": "Business",
+      "comments": [
+        {
+          "author": "Pedro",
+          "content": "Nice view!"
+        },
+        {
+          "author": "Unknown",
+          "content": "Excellent view m8"
+        },
+        {
+          "author": "Unknown",
+          "content": "Nice as always 👌"
+        },
+        {
+          "author": "Unknown",
+          "content": "Keep up the good work!"
+        },
+        {
+          "author": "Unknown",
+          "content": "Nice!"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic x2"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic x3"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic x4"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic x5"
+        },
+        {
+          "author": "Unknown",
+          "content": "Epic x6"
+        },
+        {
+          "author": "Pedro",
+          "content": "Epic x7"
+        },
+        {
+          "author": "Mario",
+          "content": "Epic x8"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Berlin",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
+      "image": "https://viajes.nationalgeographic.com.es/medio/2021/05/12/berlin_07b5c2e5_1272x824.jpg",
+      "category": "Business",
+      "comments": []
+    },
+    {
+      "title": "México is beautiful",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.minuto.com.mx%2Fu%2Ffotografias%2Fm%2F2020%2F8%2F31%2Ff1280x720-17032_148707_5050.jpg&f=1&nofb=1",
+      "category": "Travel",
+      "comments": [],
+      "id": 4
+    },
+    {
+      "id": 5,
+      "title": "New York doesn't sleep at night",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthaipoliceplus.com%2Fimg%2F510792.jpg&f=1&nofb=1",
+      "category": "Lifestyle",
+      "comments": []
+    }
+  ]
 }

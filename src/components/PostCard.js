@@ -6,11 +6,36 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CreateIcon from '@mui/icons-material/Create';
 import { useState } from "react";
 import { useRouter } from 'next/router'
+import EditPost from "./EditPost";
+import DeletePost from "./DeletePost";
+import axios from "axios";
 
-function PostCard({ post }) {
+
+function PostCard({ post, data, updateData }) {
    const [openEdit, setOpenEdit] = useState(false);
    const [openDelete, setOpenDelete] = useState(false);
    const router = useRouter()
+
+   const handleEdit = (newData, newValue) => {
+      setOpenEdit(false);
+
+      if (newData && newValue) {
+         updateData(newData);
+         axios.put(`http://localhost:8000/posts/${post.id}`, newValue);
+      }
+
+   }
+
+   const handleDelete = (newData, deletedValue) => {
+      setOpenDelete(false);
+
+      if (newData && deletedValue) {
+         updateData(newData);
+         axios.delete(`http://localhost:8000/posts/${post.id}`, deletedValue);
+      }
+   }
+
+
 
    return (
       <div className={styles.cardContainer}>
@@ -48,6 +73,9 @@ function PostCard({ post }) {
                </IconButton>
             </CardActions>
          </Card>
+
+         <EditPost open={openEdit} handleClose={handleEdit} data={data} post={post} />
+         <DeletePost open={openDelete} handleClose={handleDelete} data={data} post={post} />
 
       </div>
 

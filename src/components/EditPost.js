@@ -1,38 +1,96 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { Box } from "@mui/system";
+import { useState } from "react";
 
-function EditPost(props) {
-   const { onClose, value: valueProp, open } = props;
-   const [value, setValue] = React.useState(valueProp);
-
-   React.useEffect(() => {
-      if (!open) {
-         setValue(valueProp);
-      }
-   }, [valueProp, open]);
+function EditPost({ open, handleClose, post, data }) {
+   const [originalPost] = useState(post);
+   const [editablePost, setEditablePost] = useState(post);
 
    const handleCancel = () => {
-      onClose();
+      setEditablePost(originalPost);
+      handleClose();
    };
 
    const handleOk = () => {
-      onClose(value);
+      const newData = data.map((value) => value.id !== post.id ? value : editablePost)
+      handleClose(newData, editablePost);
    };
 
+   const handleChange = (e) => {
+      let newPost = { ...editablePost };
+      newPost[e.target.name] = e.target.value;
+      setEditablePost(newPost);
+   }
+
    return (
-      <Dialog sx={{ width: '80%', maxHeight: 435 }} open={open}>
-         <DialogTitle>Phone Ringtone</DialogTitle>
-         <DialogContent>
-            <Box>
-               something
-            </Box>
-         </DialogContent>
-         <DialogActions>
-            <Button autoFocus onClick={handleCancel}>
-               Cancel
-            </Button>
-            <Button onClick={handleOk}>Ok</Button>
-         </DialogActions>
+      <Dialog sx={{ width: "100%", maxHeight: "100%" }} open={open}>
+         <Box sx={{
+            display: "flex",
+            flexFlow: "column",
+            gap: "20px",
+            padding: "20px",
+            alignItems: "center",
+            justifyContent: "center"
+         }}>
+            <DialogTitle sx={{ fontSize: "1.8rem" }}>Edit Post</DialogTitle>
+            <DialogContent>
+               <Box sx={{ width: "400px", display: "flex", flexFlow: "column", gap: "20px" }}>
+                  <TextField
+                     sx={{ width: "100%" }}
+                     onChange={(e) => handleChange(e)}
+                     name="title"
+                     label="Title"
+                     variant="standard"
+                     defaultValue={originalPost.title}
+                  />
+                  <TextField
+                     sx={{ width: "100%" }}
+                     onChange={(e) => handleChange(e)}
+                     name="description"
+                     multiline rows={5}
+                     label="Description"
+                     variant="standard"
+                     defaultValue={originalPost.description}
+                  />
+                  <FormControl variant="standard" sx={{ width: "100%" }}>
+                     <InputLabel id="simple-select">Category</InputLabel>
+                     <Select
+                        onChange={(e) => handleChange(e)}
+                        labelId="simple-select"
+                        id="simple-select"
+                        defaultValue={originalPost.category}
+                        label="Category"
+                        name="category"
+                     >
+                        <MenuItem value="All">All</MenuItem>
+                        <MenuItem value="Travel">Travel</MenuItem>
+                        <MenuItem value="Lifestyle">Lifestyle</MenuItem>
+                        <MenuItem value="Business">Business</MenuItem>
+                        <MenuItem value="Food">Food</MenuItem>
+                        <MenuItem value="Work">Work</MenuItem>
+                     </Select>
+                  </FormControl >
+                  <TextField
+                     sx={{ width: "100%" }}
+                     onChange={(e) => handleChange(e)}
+                     name="image"
+                     label="URL of the image"
+                     variant="standard"
+                     defaultValue={originalPost.image}
+                  />
+
+               </Box>
+            </DialogContent>
+            <DialogActions sx={{ display: "flex", gap: "20px" }}>
+               <Button autoFocus onClick={handleCancel}>
+                  Cancel
+               </Button>
+               <Button color="primary" variant="contained" onClick={handleOk}>
+                  Update
+               </Button>
+            </DialogActions>
+         </Box>
+
       </Dialog>
    );
 }

@@ -8,6 +8,10 @@ function useFetch(url) {
    const [error, setError] = useState(null);
    const [data, setData] = useState(null);
 
+   const updateCache = (newData) => {
+      cache.set(url, newData);
+   }
+
    useEffect(() => {
       const controller = new AbortController();
       if (!cache.has(url)) {
@@ -33,7 +37,7 @@ function useFetch(url) {
       }
    }, [url])
 
-   return { data, loading, error };
+   return { data, setData, loading, error, updateCache };
 }
 
 export default useFetch;

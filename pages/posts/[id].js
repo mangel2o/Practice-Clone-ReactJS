@@ -7,21 +7,19 @@ import styles from '../../styles/Post.module.css'
 function BlogPost() {
    const router = useRouter()
    const { id } = router.query;
-   const { data, loading, error } = useFetch(`http://localhost:8000/posts/${id}`);
-   const [post, setPost] = useState(null);
+   const { data, setData, loading, error, updateCache } = useFetch(`http://localhost:8000/posts/${id}`);
 
-   useEffect(() => {
-      if (data) {
-         setPost(data);
-      }
-   }, [data]);
+   const updateData = (newData) => {
+      setData(newData);
+      updateCache(newData);
+   }
 
    return (
       <div className={styles.container}>
          <div className={styles.postsContainer}>
             {loading && <div>Loading...</div>}
             {error && <div>{JSON.stringify(error)}</div>}
-            {post && <HeroPost data={post} comments={post.comments} />}
+            {data && <HeroPost data={data} updateData={updateData} />}
          </div>
       </div>
    );

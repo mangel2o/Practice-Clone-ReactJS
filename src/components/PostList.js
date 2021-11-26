@@ -4,17 +4,17 @@ import CardContent from '@mui/material/CardContent';
 import PostCard from "./PostCard";
 import { Typography } from "@mui/material";
 
-function PostList(props) {
+function PostList({ data, updateData }) {
 
    return (
       <div className={styles.postsContainer}>
          <div className={styles.postsList}>
-            {props.data.length > 0 && props.data.map((post) => (
-               <PostCard key={post.id} post={post} />
+            {data.length > 0 && data.map((post) => (
+               <PostCard key={post.id} post={post} data={data} updateData={updateData} />
             ))}
          </div>
 
-         {props.data.length < 1 &&
+         {data.length < 1 &&
             <Card>
                <CardContent style={{ backgroundColor: "#f8f9fb" }} >
                   <Typography variant="h4" style={{ padding: "0 20px" }}>

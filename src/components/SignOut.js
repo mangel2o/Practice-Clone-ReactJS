@@ -1,8 +1,36 @@
-function SignOut() {
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+
+function SignOut({ open, handleClose }) {
+   const handleOk = () => {
+      handleClose();
+   };
+
    return (
-      <div>
-         a
-      </div>
+      <Dialog sx={{ width: "100%", maxHeight: "100%" }} open={open}>
+         <Box sx={{
+            display: "flex",
+            flexFlow: "column",
+            gap: "20px",
+            padding: "20px",
+            alignItems: "center",
+            justifyContent: "center"
+         }}>
+            <DialogTitle sx={{ fontSize: "1.8rem" }}>Sign Out</DialogTitle>
+            <DialogContent >
+               <Typography variant="h2" sx={{ textAlign: "center", fontSize: "1.6rem", fontWeight: "bold" }}>
+                  Are you sure you want to sign out?
+               </Typography>
+            </DialogContent>
+            <DialogActions sx={{ display: "flex", gap: "20px" }}>
+
+               <Button color="primary" variant="contained" onClick={handleOk}>
+                  Sign out
+               </Button>
+            </DialogActions>
+         </Box>
+
+      </Dialog>
    );
 }
 
