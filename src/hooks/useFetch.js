@@ -12,26 +12,31 @@ function useFetch(url) {
       cache.set(url, newData);
    }
 
+   const runFetch = (url, controller) => {
+      axios.get(url, { signal: controller.signal })
+         .then((fetchedData) => {
+            cache.set(url, fetchedData.data);
+            setData(fetchedData.data)
+            setLoading(false);
+         })
+         .catch((err) => {
+            if (err.response) {
+               setError(err.response.data);
+               setLoading(false);
+            }
+         })
+   }
+
    useEffect(() => {
       const controller = new AbortController();
       if (!cache.has(url)) {
-         axios.get(url, { signal: controller.signal })
-            .then((fetchedData) => {
-               cache.set(url, fetchedData.data);
-               setData(fetchedData.data)
-               setLoading(false);
-            })
-            .catch((err) => {
-               if (err.response) {
-                  setError(err.response.data);
-                  setLoading(false);
-               }
-            })
+         runFetch(url, controller);
       } else {
          setData(cache.get(url));
          setError(null);
          setLoading(false);
       }
+      runFetch(url, controller);
       return () => {
          controller.abort();
       }

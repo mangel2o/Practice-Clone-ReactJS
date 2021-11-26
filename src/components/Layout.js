@@ -22,9 +22,11 @@ function Layout({ children }) {
       setOpenSignIn(false);
    }
 
-   const handleSignOut = () => {
-      localStorage.removeItem("user");
-      setLoggedIn(false);
+   const handleSignOut = (cancel) => {
+      if (!cancel) {
+         localStorage.removeItem("user");
+         setLoggedIn(false);
+      }
       setOpenSignOut(false);
    }
 

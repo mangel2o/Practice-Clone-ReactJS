@@ -26,6 +26,14 @@
         {
           "author": "Unknown",
           "content": "Amazing as always 👍"
+        },
+        {
+          "author": "Miguel",
+          "content": "Epic"
+        },
+        {
+          "author": "Miguel",
+          "content": "Epic x2"
         }
       ]
     },
@@ -96,7 +104,12 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies pulvinar est, ut rutrum turpis porttitor eget. Mauris sed bibendum odio.",
       "image": "https://viajes.nationalgeographic.com.es/medio/2021/05/12/berlin_07b5c2e5_1272x824.jpg",
       "category": "Business",
-      "comments": []
+      "comments": [
+        {
+          "author": "Miguel",
+          "content": "Epic"
+        }
+      ]
     },
     {
       "title": "México is beautiful",

@@ -2,6 +2,10 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography }
 import { Box } from "@mui/system";
 
 function SignOut({ open, handleClose }) {
+   const handleCancel = () => {
+      handleClose(true);
+   };
+
    const handleOk = () => {
       handleClose();
    };
@@ -23,7 +27,9 @@ function SignOut({ open, handleClose }) {
                </Typography>
             </DialogContent>
             <DialogActions sx={{ display: "flex", gap: "20px" }}>
-
+               <Button autoFocus onClick={handleCancel}>
+                  Cancel
+               </Button>
                <Button color="primary" variant="contained" onClick={handleOk}>
                   Sign out
                </Button>
